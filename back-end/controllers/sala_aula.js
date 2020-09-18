@@ -27,7 +27,7 @@ Delete                     Delete
 
 // controller é um conjunto de funções associadas as operações sobre dados 
 
-const Turma = require('../models/Turma');
+const SalaAula = require('../models/SalaAula');
 
 const controller = {};
 // Operação CREATE, função novo()
@@ -35,7 +35,7 @@ controller.novo = async (req, res) => {
     //Usa os dados que chega dentro do bpdy da requisição
     //e os envia ao banco de dados para a criação de um novo objeto
    try{
-        await Turma.create(req.body)
+        await SalaAula.create(req.body)
         //HTTP 201: CREATED
         res.status(201).end()
     }
@@ -49,7 +49,7 @@ controller.novo = async (req, res) => {
 //Operação RETRIEVE, (all) função listar()
 controller.listar = async (req, res) => {
     try{
-        let dados = await Turma.find() //Traz tudos os cursos cadastrados
+        let dados = await SalaAula.find() //Traz tudos os cursos cadastrados
         res.send(dados)
     }catch(erro){
         console.log(erro)
@@ -62,7 +62,7 @@ controller.obterUm = async (req, res) => {
     try{
         //capturando o parametro id da url
         const id = req.params.id
-        let obj = await Turma.findById(id)
+        let obj = await SalaAula.findById(id)
 
         //objeto existe e foi encontrado
         if(obj) res.send(obj)
@@ -81,7 +81,7 @@ controller.atualizar = async (req, res) => {
         const id = req.body._id
 
         //Busca e substituição do conteudo do objeto
-        let ret = await Turma.findByIdAndUpdate(id, req.body)
+        let ret = await SalaAula.findByIdAndUpdate(id, req.body)
 
         //Se encontrou e atualizou retornamos HTTP 204 : No content
         if(ret) res.status(204).end()
@@ -101,7 +101,7 @@ controller.excluir = async (req, res) => {
         const id = req.body._id
 
         //Busca pelo id e exclusão
-        let ret = await Turma.findByIdAndDelete(id)
+        let ret = await SalaAula.findByIdAndDelete(id)
 
         //Encontrou e exclui, HTTP 204: No content
         if(ret) res.status(204).end()
