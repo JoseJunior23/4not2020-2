@@ -23,22 +23,19 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
-const teste = require('./routes/teste')
-app.use('/teste', teste)
-
-const curso = require('./routes/curso')
-app.use('/curso', curso)
-
-const professor = require('./routes/professor')
-app.use('/professor', professor)
-
-const sala_aula = require('./routes/sala_aula')
-app.use('/sala-aula', sala_aula)
-
-const turma = require('./routes/turma')
-app.use('/turma', turma)
-
-const funcionario = require('./routes/funcionario')
+const funcionario = require('./routesTrabalho/funcionario')
 app.use('/funcionario', funcionario)
 
-module.exports = app;
+const grupo_pesponto = require('./routesTrabalho/grupo_pesponto')
+app.use('/grupo', grupo_pesponto)
+
+const insumo = require('./routesTrabalho/insumo')
+app.use('/insumo', insumo)
+
+const modelo_sapato = require('./routesTrabalho/modelo_sapato')
+app.use('/modelo', modelo_sapato)
+
+const producao_recebida = require('./routesTrabalho/producao_recebida')
+app.use('/producao', producao_recebida)
+
+module.exports = app_trabalho;
