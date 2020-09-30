@@ -20,7 +20,7 @@
 
 // Controller é um conjunto de funções associadas às operações sobre dados
 
-const Funcionario = require('../models/Funcionario')
+const Funcionario = require('../modelsTrabalho/Funcionario')
 
 const controller = {}   // Objeto vazio
 

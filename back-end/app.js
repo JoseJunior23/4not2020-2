@@ -38,7 +38,21 @@ app.use('/sala-aula', sala_aula)
 const turma = require('./routes/turma')
 app.use('/turma', turma)
 
-const funcionario = require('./routes/funcionario')
+//=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+// rotas do trabalho
+const funcionario = require('./routesTrabalho/funcionario')
 app.use('/funcionario', funcionario)
+
+const grupo_pesponto = require('./routesTrabalho/grupo_pesponto')
+app.use('/grupo', grupo_pesponto)
+
+const insumo = require('./routesTrabalho/insumo')
+app.use('/insumo', insumo)
+
+const modelo_sapato = require('./routesTrabalho/modelo_sapato')
+app.use('/modelo', modelo_sapato)
+
+const producao_recebida = require('./routesTrabalho/producao_recebida')
+app.use('/producao', producao_recebida)
 
 module.exports = app;

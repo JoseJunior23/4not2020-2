@@ -1,4 +1,4 @@
-const controller = require('../controllers/funcionario');
+const controller = require('../controllersTrabalho/funcionario');
 const express = require('express');
 
 const router = express.Router();
