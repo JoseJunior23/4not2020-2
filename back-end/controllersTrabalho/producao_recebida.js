@@ -44,10 +44,6 @@ controller.novo = async (req, res) => {
 controller.listar = async (req, res) => {
     try {
         let dados = await Producao_recebida.find() // Traz todos os cursos cadastrados
-
-        let dado = await Producao_recebida.find()
-        .populate('insumo', 'linha')
-        .populate('insumo', 'cola')
         res.send(dados) // Vai com status HTTP 200: OK
     }
     catch(erro) {
