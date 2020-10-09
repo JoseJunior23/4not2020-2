@@ -20,7 +20,7 @@
 
 // Controller é um conjunto de funções associadas às operações sobre dados
 
-const Grupo_pesponto = require('../modelsTrabalho/Grupo_pesponto')
+const GrupoPesponto = require('../modelsTrabalho/GrupoPesponto')
 
 const controller = {}   // Objeto vazio
 
@@ -29,7 +29,7 @@ controller.novo = async (req, res) => {
     // Usa os dados que chegam dentro do body da requisição
     // e os envia o BD para a criação de um novo objeto
     try {
-        await Grupo_pesponto.create(req.body)
+        await GrupoPesponto.create(req.body)
         // HTTP 201: Created
         res.status(201).end()
     }
@@ -43,9 +43,10 @@ controller.novo = async (req, res) => {
 // Operação RETRIEVE (all), função listar()
 controller.listar = async (req, res) => {
     try {
-        let dados = await Grupo_pesponto.find()// Traz todos os cursos cadastrados
-        .populate('nome_funcionarios', 'nome funcao')
-        .populate('producao')
+        let dados = await GrupoPesponto.find()// Traz todos os cursos cadastrados
+        .populate('nome_funcionarios', 'nome_funcao')
+        .populate('producao', 'qtd_Pares')
+        .populate('qtd_insumoProducao')
         res.send(dados) // Vai com status HTTP 200: OK
     }
     catch(erro) {
@@ -59,7 +60,7 @@ controller.obterUm = async (req, res) => {
     try {
         // Capturando o parâmetro id da URL
         const id = req.params.id
-        let obj = await Grupo_pesponto.findById(id)
+        let obj = await GrupoPesponto.findById(id)
 
         // O objeto existe e foi encontrado
         if(obj) res.send(obj)       // HTTP 200
@@ -79,7 +80,7 @@ controller.atualizar = async (req, res) => {
         const id = req.body._id
         
         // Busca e substituição do conteúdo do objeto
-        let ret = await Grupo_pesponto.findByIdAndUpdate(id, req.body)
+        let ret = await GrupoPesponto.findByIdAndUpdate(id, req.body)
 
         // Se encontrou e atualizou, retornamos HTTP 204: No content
         if(ret) res.status(204).end()
@@ -99,7 +100,7 @@ controller.excluir = async (req, res) => {
         const id = req.body._id
         
         // Busca pelo id e exclusão
-        let ret = await Grupo_pesponto.findByIdAndDelete(id)
+        let ret = await GrupoPesponto.findByIdAndDelete(id)
 
         // Encontrou e excluiu, HTTP 204: No content
         if(ret) res.status(204).end()

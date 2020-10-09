@@ -9,4 +9,4 @@ const esquema = mongoose.Schema({
 
 })
 
-module.exports = mongoose.model('Modelo_sapato', esquema, 'modelos_sapatos')
+module.exports = mongoose.model('ModeloSapato', esquema, 'modelos_sapatos')

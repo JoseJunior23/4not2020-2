@@ -7,4 +7,4 @@ const esquema = mongoose.Schema({
     diaRecebimento:{type: Date, required: true},
 })
 
-module.exports = mongoose.model('Producao_recebida', esquema, 'producoes_recebidas')
+module.exports = mongoose.model('ProducaoRecebida', esquema, 'producoes_recebidas')
