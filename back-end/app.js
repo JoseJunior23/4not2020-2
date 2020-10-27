@@ -14,6 +14,12 @@ db(`mongodb+srv://${dbUser}:${dbPass}@cluster0.rdarn.gcp.mongodb.net/${dbName}?r
 
 var app = express();
 
+//habilita a chamada do bac-end a partir de um servidor distinto
+// É necessario instalar :
+//npm install cors --save
+const cors = require('cors')
+app.use(cors())
+
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
