@@ -2,3 +2,33 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+#content {
+    margin: 40px;
+}
+.mat-table {
+    width: 100%;
+}
+.cell-align-right {
+    text-align: right !important;
+}
+.cell-align-center {
+    text-align: center !important;
+}
+
+// desaparece com os botoes editar e excluir das tabelas de listagem
+.mat-row .mat-raised-button {
+    visibility: hidden;
+}
+
+// reexibe os botoes na linha na qual esta localizado o curso 
+
+.mat-row:hover .mat-raised-button {
+    visibility: visible;
+}
+
+//coloca um leve destaque na linha sob o mouse
+
+.mat-row:hover {
+    filter: brightness(120%)
+}
