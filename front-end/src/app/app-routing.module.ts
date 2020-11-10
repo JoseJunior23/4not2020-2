@@ -1,10 +1,13 @@
+import { CursoFormComponent } from './curso/curso-form/curso-form.component';
 import { CursoListComponent } from './curso/curso-list/curso-list.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
     //Nomes de rotas no Angular (path) Não Comecam com uma barra
-    {path: 'curso', component: CursoListComponent}
+    {path: 'curso', component: CursoListComponent},
+    {path: 'curso/novo', component: CursoFormComponent},
+    {path: 'curso/:id', component: CursoFormComponent}
 ];
 
 @NgModule({
