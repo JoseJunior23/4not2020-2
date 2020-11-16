@@ -1,5 +1,6 @@
  
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-curso-form',
@@ -22,6 +23,18 @@ export class CursoFormComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  salvar(form: NgForm){
+    if(form.valid){
+        //1 = salvar os dados do back-end
+        //2 = dar feedback ao usuario
+        //3 = valotar ao componente listagem
+    }
+  }
+
+  voltar(form: NgForm){
+
   }
 
 }

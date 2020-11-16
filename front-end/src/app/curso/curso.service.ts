@@ -23,6 +23,9 @@ export class CursoService {
       
       // O método request() pode usado com qualquer verbo e aceita a passagem de body
       return this.http.request('DELETE', this.apiUri, {body: {_id: id}}).toPromise()
-  }
+    }
+novo(body : any){
+    return this.http.post(this.apiUri, body).toPromise()
+}    
 
 }
