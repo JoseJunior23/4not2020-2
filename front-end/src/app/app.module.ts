@@ -28,6 +28,9 @@ import { CursoFormComponent } from './curso/curso-form/curso-form.component';
 import { FormsModule } from '@angular/forms';
 import { TurmaListComponent } from './turma/turma-list/turma-list.component';
 import { TurmaFormComponent } from './turma/turma-form/turma-form.component';
+import { FuncionarioListComponent } from './funcionario/funcionario-list/funcionario-list.component';
+import { FuncionarioFormComponent } from './funcionario/funcionario-form/funcionario-form.component';
+
 
 @NgModule({
   declarations: [
@@ -38,7 +41,10 @@ import { TurmaFormComponent } from './turma/turma-form/turma-form.component';
     CursoListComponent,
     CursoFormComponent,
     TurmaListComponent,
-    TurmaFormComponent
+    TurmaFormComponent,
+    FuncionarioListComponent,
+    FuncionarioFormComponent,
+    
   ],
   imports: [
     BrowserModule,

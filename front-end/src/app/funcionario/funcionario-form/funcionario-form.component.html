@@ -1,0 +1,69 @@
+<h1>{{ title }}</h1>
+
+<form class="std-form" #f="ngForm" (ngSubmit)="salvar(f)">
+
+	<mat-form-field>
+		<mat-label>Nome do funcionario</mat-label>
+		<input matInput placeholder="Informe o nome do funcionario" [(ngModel)]="funcionario.nome" name="nome" required>
+  </mat-form-field>
+
+  <mat-form-field>
+		<mat-label>Data de nascimento</mat-label>
+		<input matInput type="Date" placeholder="Informe a data de nascimento do funcionario" [(ngModel)]="funcionario.idade" name="idade" required>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Cpf</mat-label>
+    <input matInput type="number" [(ngModel)]="funcionario.cpf" name="cpf" required>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Rg</mat-label>
+    <input matInput type="number" [(ngModel)]="funcionario.rg" name="rg" required>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Telefone</mat-label>
+    <input matInput type="number" [(ngModel)]="funcionario.telefone" name="telefone" required>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Quantidade de filhos</mat-label>
+    <input matInput type="number" [(ngModel)]="funcionario.qtd_filho" name="qtd_filho" required>
+  </mat-form-field>
+
+  <mat-form-field>
+		<mat-label>Endereço</mat-label>
+		<input matInput placeholder="Informe o endereço do funcionario" [(ngModel)]="funcionario.endereco" name="endereco" required>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Estado civil</mat-label>
+    <mat-select [(ngModel)]="funcionario.estado_civil" name="estado_civil" required>
+      <mat-option *ngFor="let estado_civil of estados_civis" [value]="estado_civil.valor">
+        {{ estado_civil.valor }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>funcao</mat-label>
+    <mat-select [(ngModel)]="funcionario.funcao" name="funcao" required>
+      <mat-option *ngFor="let funcao of funcoes" [value]="funcao.valor">
+        {{ funcao.valor }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-toolbar class="form-buttons">
+    <mat-toolbar-row>
+      <button mat-raised-button type="submit" color="accent">
+        Salvar
+      </button>
+      <button mat-raised-button type="button" (click)="voltar(f)">
+        Voltar
+      </button>
+    </mat-toolbar-row>
+  </mat-toolbar>
+
+</form>
