@@ -1,0 +1,32 @@
+<h1>{{ title }}</h1>
+
+<form class="std-form" #f="ngForm" (ngSubmit)="salvar(f)">
+
+	<mat-form-field>
+		<mat-label>Linha</mat-label>
+		<input matInput placeholder="Informe a cor da linha" [(ngModel)]="insumo.linha" name="linha" required>
+  </mat-form-field>
+  
+  	<mat-form-field>
+		<mat-label>Agulha</mat-label>
+		<input matInput placeholder="Informe a quantidade e o numero das agulhas " [(ngModel)]="insumo.agulha" name="agulha" required>
+  </mat-form-field>
+
+  	<mat-form-field>
+		<mat-label>Cola</mat-label>
+		<input matInput placeholder="Informe quantas latas de cola foi utilizada"
+         [(ngModel)]="insumo.cola" name="cola" required>
+  </mat-form-field>
+
+
+  <mat-toolbar class="form-buttons">
+    <mat-toolbar-row>
+      <button mat-raised-button type="submit" color="accent">
+        Salvar
+      </button>
+      <button mat-raised-button type="button" (click)="voltar(f)">
+        Voltar
+      </button>
+    </mat-toolbar-row>
+  </mat-toolbar>
+</form>

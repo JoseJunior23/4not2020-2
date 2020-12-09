@@ -1,0 +1,56 @@
+<h1>Listagem de Insumos</h1>
+
+
+<mat-toolbar class="new-item">
+<a mat-raised-button color="accent" [routerLink]="['/insumo/novo']">
+    <mat-icon>add_circle</mat-icon>
+    Novo insumo
+</a>    
+</mat-toolbar>
+
+<table mat-table [dataSource]="insumos" class="mat-elevation-z5">
+
+  <!--- Note that these columns can be defined in any order.
+        The actual rendered columns are set as a property on the row definition" -->
+
+  <!-- Linha Column -->
+  <ng-container matColumnDef="linha">
+    <th mat-header-cell class="cell-align-center" *matHeaderCellDef>Linha:</th>
+    <td mat-cell class="cell-align-center" *matCellDef="let insumo"> {{insumo.linha}} </td>
+  </ng-container>
+
+  <!-- Carga Horaria Column -->
+  <ng-container matColumnDef="cola">
+    <th mat-header-cell class="cell-align-center"  *matHeaderCellDef> Cola </th>
+    <td mat-cell class="cell-align-center" *matCellDef="let insumo"> {{insumo.cola}} </td>
+  </ng-container>
+
+  <!-- Linha Column -->
+  <ng-container matColumnDef="agulha">
+    <th mat-header-cell class="cell-align-center" *matHeaderCellDef> Agulha </th>
+    <td mat-cell class="cell-align-center"  *matCellDef="let insumo"> {{insumo.agulha}} </td>
+  </ng-container>
+
+   <!-- Editar Column -->
+  <ng-container matColumnDef="editar">
+    <th mat-header-cell class="cell-align-center" *matHeaderCellDef> Editar </th>
+    <td mat-cell class="cell-align-center" *matCellDef="let insumo"> 
+        <a mat-raised-button color="primary" title="Editar" [routerLink]= "['/insumo', insumo._id]">
+            <mat-icon>edit</mat-icon> 
+        </a>
+    </td>
+  </ng-container>
+
+   <!-- Excluir Column -->
+  <ng-container matColumnDef="excluir">
+    <th mat-header-cell class="cell-align-center"  *matHeaderCellDef> Excluir </th>
+    <td mat-cell class="cell-align-center"  *matCellDef="let insumo">
+        <button mat-raised-button color="warn" title="Excluir" (click)="excluir(insumo._id)">
+        <mat-icon>delete_forever</mat-icon>
+        </button>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>

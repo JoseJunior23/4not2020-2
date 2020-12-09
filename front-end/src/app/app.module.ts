@@ -30,6 +30,10 @@ import { TurmaListComponent } from './turma/turma-list/turma-list.component';
 import { TurmaFormComponent } from './turma/turma-form/turma-form.component';
 import { FuncionarioListComponent } from './funcionario/funcionario-list/funcionario-list.component';
 import { FuncionarioFormComponent } from './funcionario/funcionario-form/funcionario-form.component';
+import { InsumoListComponent } from './insumo/insumo-list/insumo-list.component';
+import { InsumoFormComponent } from './insumo/insumo-form/insumo-form.component';
+import { ModeloSapatoListComponent } from './modelo-sapato/modelo-sapato-list/modelo-sapato-list.component';
+import { ModeloSapatoFormComponent } from './modelo-sapato/modelo-sapato-form/modelo-sapato-form.component';
 
 
 @NgModule({
@@ -44,6 +48,10 @@ import { FuncionarioFormComponent } from './funcionario/funcionario-form/funcion
     TurmaFormComponent,
     FuncionarioListComponent,
     FuncionarioFormComponent,
+    InsumoListComponent,
+    InsumoFormComponent,
+    ModeloSapatoListComponent,
+    ModeloSapatoFormComponent,
     
   ],
   imports: [
