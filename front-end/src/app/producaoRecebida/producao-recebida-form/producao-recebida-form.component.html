@@ -1,0 +1,39 @@
+<h1>{{ title }}</h1>
+
+<form class="std-form" #f="ngForm" (ngSubmit)="salvar(f)">
+
+	<mat-form-field>
+		<mat-label> quantidade de pares </mat-label>
+		<input matInput placeholder="Informe a quantidade de pares recebida" [(ngModel)]="producao_recebida.qtd_pares" name="qtd_pares" required>
+  </mat-form-field>
+
+  	<mat-form-field>
+		<mat-label> Plano </mat-label>
+		<input matInput placeholder="Informe o numero do plano" [(ngModel)]="producao_recebida.plano" name="qtd_plano" required>
+  </mat-form-field>
+
+  	<mat-form-field>
+		<mat-label> Fabrica </mat-label>
+		<input matInput placeholder="Informe o nome da fabrica" [(ngModel)]="producao_recebida.fabrica" name="fabrica" required>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Data de recebimento</mat-label>
+    <input matInput [matDatepicker]="dia_recebimento" name="dia_recebimento" 
+        [(ngModel)]="producao_recebida.dia_recebimento" placeholder="Informe o dia de entrada da produção" required>
+    <mat-datepicker-toggle matSuffix [for]="dia_recebimento"></mat-datepicker-toggle>
+    <mat-datepicker #dia_recebimento></mat-datepicker> 
+  </mat-form-field>
+
+
+  <mat-toolbar class="form-buttons">
+    <mat-toolbar-row>
+      <button mat-raised-button type="submit" color="accent">
+        Salvar
+      </button>
+      <button mat-raised-button type="button" (click)="voltar(f)">
+        Voltar
+      </button>
+    </mat-toolbar-row>
+  </mat-toolbar>
+</form>

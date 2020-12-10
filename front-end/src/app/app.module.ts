@@ -32,8 +32,13 @@ import { FuncionarioListComponent } from './funcionario/funcionario-list/funcion
 import { FuncionarioFormComponent } from './funcionario/funcionario-form/funcionario-form.component';
 import { InsumoListComponent } from './insumo/insumo-list/insumo-list.component';
 import { InsumoFormComponent } from './insumo/insumo-form/insumo-form.component';
-import { ModeloSapatoListComponent } from './modelo-sapato/modelo-sapato-list/modelo-sapato-list.component';
-import { ModeloSapatoFormComponent } from './modelo-sapato/modelo-sapato-form/modelo-sapato-form.component';
+import { ModeloSapatoFormComponent } from './modeloSapato/modelo-sapato-form/modelo-sapato-form.component';
+import { ModeloSapatoListComponent } from './modeloSapato/modelo-sapato-list/modelo-sapato-list.component';
+import { ProducaoRecebidaListComponent } from './producaoRecebida/producao-recebida-list/producao-recebida-list.component';
+import { ProducaoRecebidaFormComponent } from './producaoRecebida/producao-recebida-form/producao-recebida-form.component';
+import { GrupoPespontoListComponent } from './grupoPesponto/grupo-pesponto-list/grupo-pesponto-list.component';
+import { GrupoPespontoFormComponent } from './grupoPesponto/grupo-pesponto-form/grupo-pesponto-form.component';
+
 
 
 @NgModule({
@@ -50,8 +55,12 @@ import { ModeloSapatoFormComponent } from './modelo-sapato/modelo-sapato-form/mo
     FuncionarioFormComponent,
     InsumoListComponent,
     InsumoFormComponent,
-    ModeloSapatoListComponent,
     ModeloSapatoFormComponent,
+    ModeloSapatoListComponent,
+    ProducaoRecebidaListComponent,
+    ProducaoRecebidaFormComponent,
+    GrupoPespontoListComponent,
+    GrupoPespontoFormComponent,
     
   ],
   imports: [

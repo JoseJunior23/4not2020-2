@@ -1,0 +1,36 @@
+<h1>{{ title }}</h1>
+
+<form class="std-form" #f="ngForm" (ngSubmit)="salvar(f)">
+
+	<mat-form-field>
+		<mat-label>Referencia</mat-label>
+		<input matInput placeholder="Informe a referencia do modelo" [(ngModel)]="modelo_sapato.referencia" name="referencia" required>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Qtd</mat-label>
+    <input matInput placeholder="Informe a qtd do modelo" [(ngModel)]="modelo_sapato.qtd"  name="qtd" required>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>numero_ficha</mat-label>
+    <input matInput type="number" [(ngModel)]="modelo_sapato.numero_ficha" name="numero_ficha" required>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Valor do sapato</mat-label>
+    <input matInput type="number" [(ngModel)]="modelo_sapato.valor" name="valor" required>
+  </mat-form-field>
+
+  <mat-toolbar class="form-buttons">
+    <mat-toolbar-row>
+      <button mat-raised-button type="submit" color="accent">
+        Salvar
+      </button>
+      <button mat-raised-button type="button" (click)="voltar(f)">
+        Voltar
+      </button>
+    </mat-toolbar-row>
+  </mat-toolbar>
+
+</form>

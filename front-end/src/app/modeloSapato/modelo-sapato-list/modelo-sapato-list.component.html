@@ -1,0 +1,69 @@
+<h1>Listagem de modelos de sapatos</h1>
+
+
+<mat-toolbar class="new-item">
+<a mat-raised-button color="accent" [routerLink]="['/modelo_sapato/novo']">
+    <mat-icon>add_circle</mat-icon>
+    Novo modelo de sapato
+</a>    
+</mat-toolbar>
+
+<table mat-table [dataSource]="modelos_sapatos" class="mat-elevation-z5">
+
+  <!--- Note that these columns can be defined in any order.
+        The actual rendered columns are set as a property on the row definition" -->
+
+  <!--referencia Column -->
+  <ng-container matColumnDef="referencia">
+    <th mat-header-cell class="cell-align-center" *matHeaderCellDef>Numero de referência</th>
+    <td mat-cell class="cell-align-center" *matCellDef="let modelo_sapato"> {{modelo_sapato.referencia}} </td>
+  </ng-container>
+
+  <!-- Qtd Horaria Column -->
+  <ng-container matColumnDef="qtd">
+    <th mat-header-cell class="cell-align-center"  *matHeaderCellDef>Quantidade de pares</th>
+    <td mat-cell class="cell-align-center" *matCellDef="let modelo_sapato"> {{modelo_sapato.qtd}} </td>
+  </ng-container>
+
+  <!-- numero de ficha Column -->
+  <ng-container matColumnDef="numero_ficha">
+    <th mat-header-cell class="cell-align-center" *matHeaderCellDef> Numero da ficha</th>
+    <td mat-cell class="cell-align-center"  *matCellDef="let modelo_sapato"> {{modelo_sapato.numero_ficha}} </td>
+  </ng-container>
+
+  <!-- Valor Column -->
+  <ng-container matColumnDef="valor">
+    <th mat-header-cell class="cell-align-right" *matHeaderCellDef>Valor</th>
+    <!--
+        Formatação de moeda:
+        currency:'BRL' -> (Brazilian Real)
+        'symbol': mostra o símbolo R$
+        '1.2-2': mínimo 1 dígito antes da vírgula; mínimo de 2 e máximo 2 de 2 casas demais
+        'pt': usa os padrões de formatação de números da língua portuguesa
+    -->
+    <td mat-cell  class="cell-align-right" *matCellDef="let modelo_sapato"> {{modelo_sapato.valor | currency:'BRL':'symbol':'1.2-2':'pt'}} </td>
+  </ng-container>
+
+   <!-- Editar Column -->
+  <ng-container matColumnDef="editar">
+    <th mat-header-cell class="cell-align-center" *matHeaderCellDef> Editar </th>
+    <td mat-cell class="cell-align-center" *matCellDef="let modelo_sapato"> 
+        <a mat-raised-button color="primary" title="Editar" [routerLink]= "['/modelo_sapato', modelo_sapato._id]">
+            <mat-icon>edit</mat-icon> 
+        </a>
+    </td>
+  </ng-container>
+
+   <!-- Excluir Column -->
+  <ng-container matColumnDef="excluir">
+    <th mat-header-cell class="cell-align-center"  *matHeaderCellDef> Excluir </th>
+    <td mat-cell class="cell-align-center"  *matCellDef="let modelo_sapato">
+        <button mat-raised-button color="warn" title="Excluir" (click)="excluir(modelo_sapato._id)">
+        <mat-icon>delete_forever</mat-icon>
+        </button>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
