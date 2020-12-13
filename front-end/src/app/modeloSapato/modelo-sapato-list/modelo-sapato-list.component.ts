@@ -13,7 +13,7 @@ export class ModeloSapatoListComponent implements OnInit {
   modelos_sapatos : any = []
 
   // Quais colunas serão exibidas na tabela, e em qual ordem
-  displayedColumns: string[] = ['referencia', 'qtd', 'numero_ficha', 'valor', 'editar', 'excluir']   
+  displayedColumns: string[] = ['nomeFabrica','referencia', 'valor', 'editar', 'excluir']   
 
   // Injeção de dependência ou inversão de controle
   constructor(

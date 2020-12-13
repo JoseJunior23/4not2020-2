@@ -13,22 +13,16 @@
   <!--- Note that these columns can be defined in any order.
         The actual rendered columns are set as a property on the row definition" -->
 
+  <!-- nome da fabricade Column -->
+  <ng-container matColumnDef="nomeFabrica">
+    <th mat-header-cell class="cell-align-center" *matHeaderCellDef> Nome da fabrica</th>
+    <td mat-cell class="cell-align-center"  *matCellDef="let modelo_sapato"> {{modelo_sapato.nomeFabrica}} </td>
+  </ng-container>      
+
   <!--referencia Column -->
   <ng-container matColumnDef="referencia">
     <th mat-header-cell class="cell-align-center" *matHeaderCellDef>Numero de referência</th>
     <td mat-cell class="cell-align-center" *matCellDef="let modelo_sapato"> {{modelo_sapato.referencia}} </td>
-  </ng-container>
-
-  <!-- Qtd Horaria Column -->
-  <ng-container matColumnDef="qtd">
-    <th mat-header-cell class="cell-align-center"  *matHeaderCellDef>Quantidade de pares</th>
-    <td mat-cell class="cell-align-center" *matCellDef="let modelo_sapato"> {{modelo_sapato.qtd}} </td>
-  </ng-container>
-
-  <!-- numero de ficha Column -->
-  <ng-container matColumnDef="numero_ficha">
-    <th mat-header-cell class="cell-align-center" *matHeaderCellDef> Numero da ficha</th>
-    <td mat-cell class="cell-align-center"  *matCellDef="let modelo_sapato"> {{modelo_sapato.numero_ficha}} </td>
   </ng-container>
 
   <!-- Valor Column -->

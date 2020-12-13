@@ -2,19 +2,14 @@
 
 <form class="std-form" #f="ngForm" (ngSubmit)="salvar(f)">
 
+     <mat-form-field>
+    <mat-label>Nome da Fabrica</mat-label>
+    <input matInput placeholder="Informe a qtd do modelo" [(ngModel)]="modelo_sapato.nomeFabrica"  name="nomeFabrica" required>
+  </mat-form-field>
+
 	<mat-form-field>
 		<mat-label>Referencia</mat-label>
 		<input matInput placeholder="Informe a referencia do modelo" [(ngModel)]="modelo_sapato.referencia" name="referencia" required>
-  </mat-form-field>
-
-  <mat-form-field>
-    <mat-label>Qtd</mat-label>
-    <input matInput placeholder="Informe a qtd do modelo" [(ngModel)]="modelo_sapato.qtd"  name="qtd" required>
-  </mat-form-field>
-
-  <mat-form-field>
-    <mat-label>numero_ficha</mat-label>
-    <input matInput type="number" [(ngModel)]="modelo_sapato.numero_ficha" name="numero_ficha" required>
   </mat-form-field>
 
   <mat-form-field>
