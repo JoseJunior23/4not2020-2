@@ -1,9 +1,8 @@
 const mongoose = require('mongoose')
 
 const esquema = mongoose.Schema({
-    referencia:{type: String, required: true},
-    qtd:{type: Number, required: true},
-    numero_ficha:{type: Number, required: true}, 
+    nomeFabrica:{type: String, required: true},
+    referencia:{type: String, required: true}, 
     valor:{type: Number, required: true},
    
 

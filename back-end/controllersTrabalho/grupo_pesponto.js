@@ -44,9 +44,8 @@ controller.novo = async (req, res) => {
 controller.listar = async (req, res) => {
     try {
         let dados = await GrupoPesponto.find()// Traz todos os cursos cadastrados
-        .populate('nome_funcionarios', 'nome_funcao')
-        .populate('producao', 'qtd_Pares')
-        .populate('qtd_insumoProducao')
+        .populate('nomeFuncionario1 nomeFuncionario2 nomeFuncionario3')
+        .populate('ProducaoRecebida')
         res.send(dados) // Vai com status HTTP 200: OK
     }
     catch(erro) {

@@ -10,7 +10,7 @@ const db = require('./config/database')
 const dbUser = process.env.DB_USER
 const dbPass = process.env.DB_PASS
 const dbName = process.env.DB_NAME
-db(`mongodb+srv://${dbUser}:${dbPass}@cluster0.rdarn.gcp.mongodb.net/${dbName}?retryWrites=true&w=majority`)
+db(`mongodb+srv://${dbUser}:${dbPass}@cluster0.ltdpc.mongodb.net/${dbName}?retryWrites=true&w=majority`)
 
 var app = express();
 
@@ -50,15 +50,15 @@ const funcionario = require('./routesTrabalho/funcionario')
 app.use('/funcionario', funcionario)
 
 const grupo_pesponto = require('./routesTrabalho/grupo_pesponto')
-app.use('/grupo', grupo_pesponto)
+app.use('/grupo_pesponto', grupo_pesponto)
 
 const insumo = require('./routesTrabalho/insumo')
 app.use('/insumo', insumo)
 
 const modelo_sapato = require('./routesTrabalho/modelo_sapato')
-app.use('/modelo', modelo_sapato)
+app.use('/modelo-sapato', modelo_sapato)
 
 const producao_recebida = require('./routesTrabalho/producao_recebida')
-app.use('/producao', producao_recebida)
+app.use('/producao_recebida', producao_recebida)
 
 module.exports = app;

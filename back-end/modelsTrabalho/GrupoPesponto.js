@@ -1,12 +1,13 @@
 const mongoose = require('mongoose')
 
 const esquema = mongoose.Schema({
-    nome_grupo:{type: String, required: true},
-    qtd_funcionarios:{type: Number, required: true},
-    nome_funcionarios:{type: mongoose.ObjectId, ref:'Funcionario', required: true},
+    nomeGrupo:{type: String, required: true},
+    qtdFuncionarios:{type: Number, required: true},
+    nomeFuncionario1:{type: mongoose.ObjectId, ref:'Funcionario', required: true},
+    nomeFuncionario2:{type: mongoose.ObjectId, ref:'Funcionario', required: true},
+    nomeFuncionario3:{type: mongoose.ObjectId, ref:'Funcionario', required: true},
     producao:{type: mongoose.ObjectId, ref:'ProducaoRecebida', required: true},
-    qtd_insumoProducao:{type: mongoose.ObjectId, ref: 'Insumo', required: true},
-    valor_par:{type: Number, required: true}
+    valorPar:{type: Number, required: true}
 
 })
 

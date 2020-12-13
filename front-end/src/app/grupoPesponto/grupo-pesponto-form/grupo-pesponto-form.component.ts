@@ -46,7 +46,7 @@ insumos: any = []
         // e disponibilizá-lo para edição        
         this.grupo_pesponto = await this.grupo_pespontoSrv.obterUm(this.actRoute.snapshot.params['id'])
         // 2) Mudar o título da página
-        this.title = 'Editando grupo_pesponto'
+        this.title = 'Editando grupos de pesponto'
       }
       catch(erro) {
         console.log(erro)

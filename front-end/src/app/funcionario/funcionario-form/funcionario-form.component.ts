@@ -21,10 +21,7 @@ export class FuncionarioFormComponent implements OnInit {
     { valor: 'Aparador' },
     { valor: 'Revisor'}
   ]
-  estados_civis: any =[
-      {valor: 'Solteiro'},
-      {valor: 'Casado'}
-  ]
+
 
   title : string = 'Novo funcionario'
 

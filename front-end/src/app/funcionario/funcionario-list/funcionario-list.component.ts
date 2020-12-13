@@ -13,7 +13,7 @@ export class FuncionarioListComponent implements OnInit {
   funcionarios : any = []
 
   // Quais colunas serão exibidas na tabela, e em qual ordem
-  displayedColumns: string[] = ['nome', 'idade', 'cpf', 'rg','telefone','endereco','estado_civil','qtd_filho','funcao', 'editar', 'excluir']   
+  displayedColumns: string[] = ['nome', 'dataNasc', 'cpf', 'telefone','endereco','funcao', 'editar', 'excluir']   
 
   // Injeção de dependência ou inversão de controle
   constructor(
