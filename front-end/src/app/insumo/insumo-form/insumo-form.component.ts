@@ -4,7 +4,6 @@ import { NgForm } from '@angular/forms';
 import { InsumoService } from '../insumo.service';
 import { Location } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
-import { CursoService } from 'src/app/curso/curso.service';
 import { ProfessorService } from 'src/app/professor/professor.service';
 import { SalaAulaService } from 'src/app/sala-aula/sala-aula.service';
 

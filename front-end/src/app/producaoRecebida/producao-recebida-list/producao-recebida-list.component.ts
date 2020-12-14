@@ -13,7 +13,7 @@ export class ProducaoRecebidaListComponent implements OnInit {
   producoes_recebidas : any = []
 
   // Quais colunas serão exibidas na tabela, e em qual ordem
-  displayedColumns: string[] = ['qtd_pares', 'plano', 'fabrica', 'dia_recebimento', 'editar', 'excluir']   
+  displayedColumns: string[] = ['qtdPares', 'plano', 'modeloSapato', 'diaRecebimento','numeroFicha', 'editar', 'excluir']   
 
   // Injeção de dependência ou inversão de controle
   constructor(

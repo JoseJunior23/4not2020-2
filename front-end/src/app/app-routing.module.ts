@@ -7,8 +7,6 @@ import { InsumoListComponent } from './insumo/insumo-list/insumo-list.component'
 import { FuncionarioListComponent } from './funcionario/funcionario-list/funcionario-list.component';
 import { TurmaFormComponent } from './turma/turma-form/turma-form.component';
 import { TurmaListComponent } from './turma/turma-list/turma-list.component';
-import { CursoFormComponent } from './curso/curso-form/curso-form.component';
-import { CursoListComponent } from './curso/curso-list/curso-list.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { FuncionarioFormComponent } from './funcionario/funcionario-form/funcionario-form.component';
@@ -17,10 +15,7 @@ import { ModeloSapatoFormComponent } from './modeloSapato/modelo-sapato-form/mod
 
 const routes: Routes = [
     //Nomes de rotas no Angular (path) Não Comecam com uma barra
-    {path: 'curso', component: CursoListComponent},
-    {path: 'curso/novo', component: CursoFormComponent},
-    {path: 'curso/:id', component: CursoFormComponent},
-
+    
     {path: 'turma', component: TurmaListComponent},
     {path: 'turma/novo', component: TurmaFormComponent},
     {path: 'turma/:id', component: TurmaFormComponent},

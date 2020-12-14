@@ -13,16 +13,40 @@
          [(ngModel)]="grupo_pesponto.qtdFuncionarios" name="qtdFuncionarios" required>
   </mat-form-field>
 
-  	<mat-form-field>
-		<mat-label>Nome funcionario </mat-label>
-		<input matInput placeholder="Informe o nome do funcionarios "
-        [(ngModel)]="grupo_pesponto.nomeFuncionarios" name="nomeFuncionarios" required>
+  <mat-form-field>
+    <mat-label>Informações do Funcionario 1</mat-label>
+    <mat-select [(ngModel)]="grupo_pesponto.nomeFuncionario1" name="nomeFuncionario1" required>
+      <mat-option *ngFor="let nomeFuncionario1 of funcionarios" [value]="nomeFuncionario1._id">
+        {{ nomeFuncionario1.nome }} ({{nomeFuncionario1.funcao}})
+      </mat-option>
+    </mat-select>
   </mat-form-field>
 
-  	<mat-form-field>
-		<mat-label>Produção do grupo</mat-label>
-		<input matInput placeholder="Informe a produção do grupo "
-        [(ngModel)]="grupo_pesponto.producao" name="producao" required>
+    <mat-form-field>
+    <mat-label>Informações do Funcionario 2</mat-label>
+    <mat-select [(ngModel)]="grupo_pesponto.nomeFuncionario2" name="nomeFuncionario2" required>
+      <mat-option *ngFor="let nomeFuncionario2 of funcionarios" [value]="nomeFuncionario2._id">
+        {{ nomeFuncionario2.nome }} ({{nomeFuncionario2.funcao}})
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+    <mat-form-field>
+    <mat-label>Informações do Funcionario 3</mat-label>
+    <mat-select [(ngModel)]="grupo_pesponto.nomeFuncionario3" name="nomeFuncionario3" required>
+      <mat-option *ngFor="let nomeFuncionario3 of funcionarios" [value]="nomeFuncionario3._id">
+        {{ nomeFuncionario3.nome }} ({{nomeFuncionario3.funcao}})
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+   <mat-form-field>
+    <mat-label>Informações da produção</mat-label>
+    <mat-select [(ngModel)]="grupo_pesponto.producao" name="producao" required>
+      <mat-option *ngFor="let producao of producoes" [value]="producao._id">
+        {{ producao.numeroFicha }} 
+      </mat-option>
+    </mat-select>
   </mat-form-field>
 
 	<mat-form-field>

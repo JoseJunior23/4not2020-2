@@ -4,7 +4,6 @@ import { NgForm } from '@angular/forms';
 import { TurmaService } from '../turma.service';
 import { Location } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
-import { CursoService } from 'src/app/curso/curso.service';
 import { ProfessorService } from 'src/app/professor/professor.service';
 import { SalaAulaService } from 'src/app/sala-aula/sala-aula.service';
 
@@ -39,7 +38,6 @@ export class TurmaFormComponent implements OnInit {
   constructor(
     private turmaSrv : TurmaService,
     // Services das entidades relacionadas
-    private cursoSrv : CursoService,
     private professorSrv : ProfessorService,
     private salaAulaSrv : SalaAulaService,
     private snackBar : MatSnackBar,
@@ -69,7 +67,6 @@ export class TurmaFormComponent implements OnInit {
 
   async carregarDados() {
     try {
-      this.cursos = await this.cursoSrv.listar()
       this.professores = await this.professorSrv.listar()
       this.salasAula = await this.salaAulaSrv.listar()
     }

@@ -1,12 +1,11 @@
-import { InsumoService } from './../../insumo/insumo.service';
 import { ProducaoRecebidaService } from './../../producaoRecebida/producao-recebida.service';
-import { FuncionarioService } from './../../funcionario/funcionario.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { GrupoPespontoService } from '../grupo-pesponto.service';
 import { Location } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
+import { FuncionarioService } from 'src/app/funcionario/funcionario.service';
 
 @Component({
   selector: 'app-grupo-pesponto-form',
@@ -20,19 +19,23 @@ export class GrupoPespontoFormComponent implements OnInit {
 
   title : string = 'Novo grupo de pesponto'
 
+  nomeFuncionarios1 : any = []
+  nomeFuncionarios2 : any = []
+  nomeFuncionarios3 : any = []
+  producao: any = []
+
   // Variáveis para armazenar as listagens de objetos relacionados
-funcionarios: any = []
-producoes_recebidas: any =[]
-insumos: any = []
+funcionarios : any = []
+producoes : any = []
+
 
 
 
   constructor(
     private grupo_pespontoSrv : GrupoPespontoService,
-    // Services das entidades relacionadas
+    // Services das entidades relacionadas,
     private funcionarioSrv : FuncionarioService,
-    private producao_recebidaSrv : ProducaoRecebidaService,
-    private insumoSrv : InsumoService,
+    private porducaoRecebidaSrv : ProducaoRecebidaService,
     private snackBar : MatSnackBar,
     private location : Location,
     private actRoute : ActivatedRoute
@@ -61,8 +64,7 @@ insumos: any = []
   async carregarDados() {
     try {
       this.funcionarios = await this.funcionarioSrv.listar()
-      this.producoes_recebidas = await this.producao_recebidaSrv.listar()
-      this.insumos = await this.insumoSrv.listar()
+      this.producoes = await this.porducaoRecebidaSrv.listar()
     }
     catch(erro) {
       console.log(erro)

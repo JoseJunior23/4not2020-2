@@ -1,4 +1,4 @@
-<h1>Listagem de grupo_pespontos</h1>
+<h1>Listagem de grupos de pespontos</h1>
 
 <mat-toolbar class="new-item">
   <a mat-raised-button color="accent" [routerLink]="['/grupo_pesponto/novo']">
@@ -13,46 +13,59 @@
         The actual rendered columns are set as a property on the row definition" -->
 
   <!-- Nome Column -->
-  <ng-container matColumnDef="nome_grupo">
+  <ng-container matColumnDef="nomeGrupo">
     <th mat-header-cell *matHeaderCellDef>Nome do grupo </th> 
-    <td mat-cell *matCellDef="let grupo_pesponto"> {{ grupo_pesponto.nome_grupo }} </td>
+    <td mat-cell *matCellDef="let grupo_pesponto"> {{ grupo_pesponto.nomeGrupo }} </td>
   </ng-container>
 
     <!-- Qtd funcionarios Column -->
-  <ng-container matColumnDef="qtd_funcionarios">
+  <ng-container matColumnDef="qtdFuncionarios">
     <th mat-header-cell *matHeaderCellDef> Quantidade de funcionarios</th> 
-    <td mat-cell *matCellDef="let grupo_pesponto"> {{ grupo_pesponto.qtd_funcionarios}} </td>
+    <td mat-cell *matCellDef="let grupo_pesponto"> {{ grupo_pesponto.qtdFuncionarios}} </td>
   </ng-container>
 
   <!-- nome funcionarios Column -->
-  <ng-container matColumnDef="nome_funcionarios">
-    <th mat-header-cell *matHeaderCellDef>Nome dos funcionarios</th> 
+  <ng-container matColumnDef="funcionario1">
+    <th mat-header-cell *matHeaderCellDef>Informações do funcinario 1 </th> 
     <!-- Quando o atributo é relacionado e está populado, é necessário
       descer mais um nível para capturar um atributo do subobjeto.
       O operador ?. evita erros caso o subobjeto não exista -->
-    <td mat-cell *matCellDef="let grupo_pesponto"> {{ grupo_pesponto.funcionario?.nome_funcionarios }}</td>
+    <td mat-cell *matCellDef="let grupo_pesponto"> {{ grupo_pesponto.nomeFuncionario1?.nome }} &mdash;
+        {{ grupo_pesponto.nomeFuncionario1?.funcao }}</td>
+  </ng-container>
+
+   <!-- nome funcionarios Column -->
+  <ng-container matColumnDef="funcionario2">
+    <th mat-header-cell *matHeaderCellDef>Informações do funcinario 2</th> 
+    <!-- Quando o atributo é relacionado e está populado, é necessário
+      descer mais um nível para capturar um atributo do subobjeto.
+      O operador ?. evita erros caso o subobjeto não exista -->
+    <td mat-cell *matCellDef="let grupo_pesponto"> {{ grupo_pesponto.nomeFuncionario2?.nome }} &mdash;
+        {{ grupo_pesponto.nomeFuncionario2?.funcao}}</td>
+  </ng-container>
+
+   <!-- nome funcionarios Column -->
+  <ng-container matColumnDef="funcionario3">
+    <th mat-header-cell *matHeaderCellDef>Informações do funcinario 3</th> 
+    <!-- Quando o atributo é relacionado e está populado, é necessário
+      descer mais um nível para capturar um atributo do subobjeto.
+      O operador ?. evita erros caso o subobjeto não exista -->
+    <td mat-cell *matCellDef="let grupo_pesponto"> {{ grupo_pesponto.nomeFuncionario3?.nome }} &mdash;
+        {{ grupo_pesponto.nomeFuncionario3?.funcao }}</td>
   </ng-container>
 
     <!-- Produção Column -->
   <ng-container matColumnDef="producao">
-    <th mat-header-cell *matHeaderCellDef>Produção do grupo</th> 
+    <th mat-header-cell *matHeaderCellDef>Numero da ficha</th> 
     <!-- Quando o atributo é relacionado e está populado, é necessário
       descer mais um nível para capturar um atributo do subobjeto.
       O operador ?. evita erros caso o subobjeto não exista -->
-    <td mat-cell *matCellDef="let grupo_pesponto"> {{ grupo_pesponto.recebimento_producao?.producao}}</td>
+    <td mat-cell *matCellDef="let grupo_pesponto"> {{ grupo_pesponto.producao?.numeroFicha}}</td>
   </ng-container>
 
-  <!-- qtd insumo producao Column -->
-  <ng-container matColumnDef="qtd_insumoProducao">
-    <th mat-header-cell *matHeaderCellDef>Quantidade de insumo usaso na produção</th> 
-    <!-- Quando o atributo é relacionado e está populado, é necessário
-      descer mais um nível para capturar um atributo do subobjeto.
-      O operador ?. evita erros caso o subobjeto não exista -->
-    <td mat-cell *matCellDef="let grupo_pesponto"> {{ grupo_pesponto.insumo?.qtd_insumoProducao}}</td>
-  </ng-container>
 
   <!-- Valor  Column -->
-  <ng-container matColumnDef="valor_par">
+  <ng-container matColumnDef="valorPar">
     <th mat-header-cell class="cell-align-right" *matHeaderCellDef>Valor pago ao grupo</th>
     <!--
         Formatação de moeda:
@@ -61,7 +74,7 @@
         '1.2-2': mínimo 1 dígito antes da vírgula; mínimo de 2 e máximo 2 de 2 casas demais
         'pt': usa os padrões de formatação de números da língua portuguesa
     -->
-    <td mat-cell  class="cell-align-right" *matCellDef="let curso"> {{grupo_pesponto.valor_par | currency:'BRL':'symbol':'1.2-2':'pt'}} </td>
+    <td mat-cell  class="cell-align-right" *matCellDef="let grupo_pesponto"> {{grupo_pesponto.valorPar | currency:'BRL':'symbol':'1.2-2':'pt'}} </td>
   </ng-container>
 
   <!-- Editar Column -->

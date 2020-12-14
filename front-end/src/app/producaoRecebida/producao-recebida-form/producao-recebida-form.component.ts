@@ -1,3 +1,4 @@
+import { ModeloSapatoService } from './../../modeloSapato/modelo-sapato.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
@@ -17,11 +18,11 @@ export class ProducaoRecebidaFormComponent implements OnInit {
 
   title : string = 'Nova producao recebida'
 
+modeloSapatos : any = []
 
   constructor(
     private producao_recebidaSrv : ProducaoRecebidaService,
-    // Services das entidades relacionadas
-  
+    private modeloSapatoSrv : ModeloSapatoService,
     private snackBar : MatSnackBar,
     private location : Location,
     private actRoute : ActivatedRoute
@@ -42,6 +43,18 @@ export class ProducaoRecebidaFormComponent implements OnInit {
         this.snackBar.open('ERRO: não foi possível carregar dados para edição.',
           'Que pena!', { duration: 5000 })
       }
+    }
+    this.carregarDados()
+  }
+
+   async carregarDados() {
+    try {
+      this.modeloSapatos = await this.modeloSapatoSrv.listar()
+    }
+    catch(erro) {
+      console.log(erro)
+      this.snackBar.open(`ERRO: não foi possível carregar todos os dados 
+        necessários para a página.`, 'Que pena', { duration: 5000 })
     }
   }
 

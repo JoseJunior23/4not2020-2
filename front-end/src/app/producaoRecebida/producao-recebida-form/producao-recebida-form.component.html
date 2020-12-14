@@ -9,22 +9,30 @@
 
   	<mat-form-field>
 		<mat-label> Plano </mat-label>
-		<input matInput placeholder="Informe o numero do plano" [(ngModel)]="producao_recebida.plano" name="qtd_plano" required>
+		<input matInput placeholder="Informe o numero do plano" [(ngModel)]="producao_recebida.plano" name="plano" required>
   </mat-form-field>
 
-  	<mat-form-field>
-		<mat-label> Fabrica </mat-label>
-		<input matInput placeholder="Informe o nome da fabrica" [(ngModel)]="producao_recebida.fabrica" name="fabrica" required>
+   <mat-form-field>
+    <mat-label>Informações do sapato</mat-label>
+    <mat-select [(ngModel)]="producao_recebida.modeloSapato" name="modeloSapato" required>
+      <mat-option *ngFor="let modeloSapato of modeloSapatos" [value]="modeloSapato._id">
+        {{ modeloSapato.nomeFabrica }}  ({{ modeloSapato.referencia }})
+      </mat-option>
+    </mat-select>
   </mat-form-field>
 
   <mat-form-field>
     <mat-label>Data de recebimento</mat-label>
-    <input matInput [matDatepicker]="dia_recebimento" name="dia_recebimento" 
-        [(ngModel)]="producao_recebida.dia_recebimento" placeholder="Informe o dia de entrada da produção" required>
-    <mat-datepicker-toggle matSuffix [for]="dia_recebimento"></mat-datepicker-toggle>
-    <mat-datepicker #dia_recebimento></mat-datepicker> 
+    <input matInput [matDatepicker]="diaRecebimento" name="diaRecebimento" 
+        [(ngModel)]="producao_recebida.diaRecebimento" placeholder="Informe o dia de entrada da produção" required>
+    <mat-datepicker-toggle matSuffix [for]="diaRecebimento"></mat-datepicker-toggle>
+    <mat-datepicker #diaRecebimento></mat-datepicker> 
   </mat-form-field>
 
+  <mat-form-field>
+		<mat-label> Numero da ficha</mat-label>
+		<input matInput placeholder="Informe o nome da fabrica" [(ngModel)]="producao_recebida.numeroFicha" name="fabrica" required>
+  </mat-form-field>
 
   <mat-toolbar class="form-buttons">
     <mat-toolbar-row>

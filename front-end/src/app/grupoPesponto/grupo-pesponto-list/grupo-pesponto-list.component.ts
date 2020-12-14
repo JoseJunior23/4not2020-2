@@ -13,7 +13,7 @@ export class GrupoPespontoListComponent implements OnInit {
   grupo_pespontos : any = []
 
   // Quais colunas serão exibidas na tabela, e em qual ordem
-  displayedColumns: string[] = ['nome_grupo', 'qtd_funcionarios','nome_funcionarios','producao', 'qtd_insumoProducao','valor_par','editar', 'excluir']   
+  displayedColumns: string[] = ['nomeGrupo', 'qtdFuncionarios','funcionario1','funcionario2','funcionario3','producao', 'valorPar','editar', 'excluir']   
 
   // Injeção de dependência ou inversão de controle
   constructor(
